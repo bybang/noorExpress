@@ -78,3 +78,35 @@ Given _that I am logged in as an admin_, when _a user registrates_, then _the us
 
 **stretch**
 Given _that I am logged in as an admin_, when _I click on a post button_, then _the product will post on homepage_**and**_the product will post on product detail page_.
+
+### ERD
+- The user stories provide you with nouns (eg. user, posts, favourites)
+- Use these nouns/entities to build out your database (ie. tables are the nouns from the stories)
+
+### Routes
+- Once you know the resources that you'll have, write out the routes that you'll need to perform BREAD operations on those resources
+- Remember RESTful conventions (they make it much easier)
+
+B /
+R 
+E 
+A 
+D 
+
+### MVP vs MVD
+- There is a concept in development of an MVP, the Minimum Viable Product
+- An MVP has just enough features to be useful to a user
+- This concept helps streamline the development process and help keep the team on target
+- For mid-terms, we want to focus on the MVD, the Minimum Viable Demo
+- **If you aren't going to demo it, don't build it**
+
+# noorExpress MVD
+- Title of the page(nav bar)
+- user login button(nav bar) - user/admin
+- favourite button(nav bar)
+- message button (will discuss later)
+- filter by (price high/low,items,alphabetically)
+- featured items images
+- featured items names, prices
+- featured items can be hovered over and magnified
+- featured items favourite button(indicator needed)
