@@ -55,7 +55,7 @@
 
 # Our Site Scenarios
 * guests
-Given _that I am logged in or not_, when _I click on a image_, then _it is take to the product page_ **and** _the details are provided_.
+Given _that I am logged in or not_, when _I click on a image_, then _it is take to the product page_.(**and** _the details are provided_.)
 Given _that I am logged in or not_, when _I go to the hompage_, then _it will show me the featured items_.
 
 * users
@@ -87,11 +87,11 @@ Given _that I am logged in as an admin_, when _I click on a post button_, then _
 - Once you know the resources that you'll have, write out the routes that you'll need to perform BREAD operations on those resources
 - Remember RESTful conventions (they make it much easier)
 
-B /
-R /
-E /
-A /
-D /
+B /items
+R /users/:id/fav
+E /products/edit
+A /products/:id(admin)
+D /products/:id(admin)
 
 ### MVP vs MVD
 - There is a concept in development of an MVP, the Minimum Viable Product
@@ -117,3 +117,85 @@ D /
 - This is also a great opportunity to get input from all of the team members
 - Design matters... however you are a developer, not a designer
 - Get inspiration from websites you visit
+
+> Added wireframe file to planning directory
+
+### User Login
+- Don't do it
+- Seriously, don't do it
+- We know that you know how to register and login users
+
+```js
+// do this instead
+app.get('/login/:id', (req, res) => {
+  // cookie-session middleware
+  req.session.user_id = req.params.id;
+
+  // cookie-parser middleware
+  res.cookie('user_id', req.params.id);
+
+  // send the user somewhere
+  res.redirect('/');
+});
+```
+
+### Tech Choices
+- We have made all the tech choices for you
+- Back End: Node and Express
+- Front End: HTML, CSS, JS, jQuery, Bootstrap
+
+### The Mid-term Skeleton
+- Use the provided `node-skeleton` as a template for your project
+- This will get you up and running quickly
+
+### SPA vs Multi-page App
+- These concepts are not mutually exclusive
+- You can choose one or the other or both
+
+### Git
+- Use Git best practices (ask a mentor for clarification if you need it)
+- Use branches
+
+### DO NOT CODE ON MASTER
+- I repeat, do not code on master
+- master - testing ---- Josh
+                   ---- Abdul
+                   ---- Moe
+
+> 1. Working on a branch
+> 2. push the branch to github(he pushed updated code into his my feature branch)
+> 3. feature is done
+
+// cloud
+> 4. open a pull request(PR) (he made a pull req)
+> 5. review with team
+> 6. the PR gets merged into master (his pull req merged into master) - deleted his branch
+
+> 7. checkout master locally (his master would not have his branch's code because he write the code in his branch)
+> 8. git pull origin master (he downloaded updated master into local machine)
+
+// locally
+> 4. checkout master
+> 5. git merge my-branch
+> 6. git push origin master
+// everone else
+> 7. checkout master locally
+> 8. git pull origin master
+
+
+### Splitting up the Work
+- Horizontally - whole team working on front-end or back-end at the same time
+- Vertically - divide the work between front-end and back-end
+
+- Pair Programming - working together on the same tasks
+
+### Communication
+- Make sure to communicate with your team members
+- Use Slack, iMessage, Google Hangouts, whatever... just make sure that everyone is on the same page
+
+### Github Projects
+- Github has a built-in project board (similar to a kanban board)
+
+### Deployment
+- Decide if you want/need to deploy your application to the cloud
+- Ask a mentor for assistance/advice if your team decides to deploy
