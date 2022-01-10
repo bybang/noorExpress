@@ -88,10 +88,10 @@ Given _that I am logged in as an admin_, when _I click on a post button_, then _
 - Remember RESTful conventions (they make it much easier)
 
 B /
-R 
-E 
-A 
-D 
+R /
+E /
+A /
+D /
 
 ### MVP vs MVD
 - There is a concept in development of an MVP, the Minimum Viable Product
@@ -110,3 +110,10 @@ D
 - featured items names, prices
 - featured items can be hovered over and magnified
 - featured items favourite button(indicator needed)
+
+### Wireframes
+- Draw out the structure of your web pages
+- This will make it much easier to build out these pages later
+- This is also a great opportunity to get input from all of the team members
+- Design matters... however you are a developer, not a designer
+- Get inspiration from websites you visit
