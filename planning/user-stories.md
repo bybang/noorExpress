@@ -78,3 +78,11 @@ Given _that I am logged in as an admin_, when _a user registrates_, then _the us
 
 **stretch**
 Given _that I am logged in as an admin_, when _I click on a post button_, then _the product will post on homepage_**and**_the product will post on product detail page_.
+
+
+### MVP vs MVD
+- There is a concept in development of an MVP, the Minimum Viable Product
+- An MVP has just enough features to be useful to a user
+- This concept helps streamline the development process and help keep the team on target
+- For mid-terms, we want to focus on the MVD, the Minimum Viable Demo
+- **If you aren't going to demo it, don't build it**
