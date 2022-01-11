@@ -158,12 +158,11 @@ app.get('/login/:id', (req, res) => {
 
 ### DO NOT CODE ON MASTER
 - I repeat, do not code on master
-- master - testing ---- Josh
-                   ---- Abdul
-                   ---- Moe
+- master / development / header
+                       -- 
 
 > 1. Working on a branch
-> 2. push the branch to github(he pushed updated code into his my feature branch)
+> 2. push the branch to github(he pushed updated code into his my-feature branch)
 > 3. feature is done
 
 // cloud
