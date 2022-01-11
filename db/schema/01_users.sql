@@ -36,6 +36,8 @@ CREATE TABLE categories (
 
 );
 
+
+
 CREATE TABLE messages (
   id SERIAL PRIMARY KEY NOT NULL,
   name conversation_id
@@ -44,4 +46,4 @@ CREATE TABLE messages (
 
 )
 
-
+CREATE TABLE
