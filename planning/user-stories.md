@@ -158,8 +158,7 @@ app.get('/login/:id', (req, res) => {
 
 ### DO NOT CODE ON MASTER
 - I repeat, do not code on master
-- master / development / header
-                       -- 
+- master / development / nav bar(feature)
 
 > 1. Working on a branch
 > 2. push the branch to github(he pushed updated code into his my-feature branch)
