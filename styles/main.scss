@@ -2,6 +2,30 @@
   margin-bottom: 4rem;
 }
 
+.carousel-item {
+  img, video {
+    background-image: url('');
+    background-size: cover;
+    background-position: center center;
+    height: 520px;
+    position: relative;
+  }
+  video {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.linear-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top,rgba(4,4,4,.65),rgba(54,54,54,.2));
+  z-index: 1;
+}
+
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -23,4 +47,8 @@
 .marketing .col-lg-4 {
   margin-bottom: 1.5rem;
   text-align: center;
+}
+
+.carousel-caption {
+  z-index: 2;
 }
