@@ -2,7 +2,7 @@ const filterByPrice = (db) => {
   return async (req, res) => {
     try {
       const { highToLow } = req.params;
-      console.log("Filterriny by Price", highToLow, typeof highToLow);
+      // console.log("Filterriny by Price", highToLow, typeof highToLow);
       let text = `SELECT * FROM public.items ORDER BY price `;
       if (highToLow == 1) {
         text = `${text}DESC`;
