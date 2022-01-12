@@ -14,8 +14,9 @@ const filterByPrice = (db) => {
       };
       const response = await db.query(query);
       res.status(200).send(response.rows);
-    } catch (error) {
+    } catch (e) {
       console.error(e);
+      res.status(500).send(e);
     }
   };
 };
