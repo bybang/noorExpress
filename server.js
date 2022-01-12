@@ -46,6 +46,7 @@ const widgetsRoutes = require("./routes/widgets");
 const addToFavourites = require("./routes/addFavourites");
 const removeFromFavourites = require("./routes/removeFromFavourite");
 const fetchFavourites = require("./routes/fetchFavourites");
+const featuredItems = require("./routes/featuredItems");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -55,6 +56,8 @@ app.post('/addToFavourites', addToFavourites(db));
 app.delete('/removeFromFavourites', removeFromFavourites(db));
 app.get('/fetchFavourites/:userId', fetchFavourites(db));
 // Note: mount other resources here, using the same pattern above
+
+app.get('/featuredItems', featuredItems(db));
 
 // Home page
 // Warning: avoid creating more routes in this file!
