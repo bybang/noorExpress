@@ -1,6 +1,8 @@
 // See: https://sass-lang.com/
 
-body,
-html {
-  margin: 0;
+.collection-toolbar {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
