@@ -1,4 +1,17 @@
+$font-default: 'Gemunu Libre', sans-serif;
+$font-small-size: 18px;
+
+.navbar {
+  font-family: $font-default;
+  font-size: $font-small-size;
+  border-bottom: 1px solid #ddd;
+}
+
 .navbar-brand > img {
   width: 75px;
   height: 50px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
 }

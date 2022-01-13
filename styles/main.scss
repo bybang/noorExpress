@@ -1,17 +1,14 @@
 .carousel {
-  margin-bottom: 4rem;
+
 }
 
 .carousel-item {
   img, video {
-    background-image: url('');
-    background-size: cover;
-    background-position: center center;
-    height: 520px;
     position: relative;
+    height: 520px;
+    width: 100%;
   }
   video {
-    width: 100%;
     object-fit: cover;
   }
 }
