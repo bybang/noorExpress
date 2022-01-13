@@ -43,21 +43,29 @@ app.use(express.static("public"));
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
+
+const filterByPrice = require("./routes/filterByPrice");
+
 const addToFavourites = require("./routes/addFavourites");
 const removeFromFavourites = require("./routes/removeFromFavourite");
 const fetchFavourites = require("./routes/fetchFavourites");
 const featuredItems = require("./routes/featuredItems");
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 
+app.get('/filterByPrice/:highToLow', filterByPrice(db));
+
+
 app.get('/featuredItems', featuredItems(db));
 
 app.post('/addToFavourites', addToFavourites(db));
 app.delete('/removeFromFavourites', removeFromFavourites(db));
 app.get('/fetchFavourites/:userId', fetchFavourites(db));
+
 
 // Note: mount other resources here, using the same pattern above
 
