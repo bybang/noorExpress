@@ -43,9 +43,10 @@ const featuredItems = require("./routes/featuredItems");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
+app.get('/featuredItems', featuredItems(db));
 // Note: mount other resources here, using the same pattern above
 
-app.get('/featuredItems', featuredItems(db));
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
