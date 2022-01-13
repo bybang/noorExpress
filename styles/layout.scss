@@ -1,8 +1,71 @@
 // See: https://sass-lang.com/
+$font-default: 'Gemunu Libre', sans-serif;
+$font-default-size: 24px;
+$font-small-size: 18px;
 
 .collection-toolbar {
+  top: 67px;
   position: sticky;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  font-family: $font-default;
+  font-size: $font-default-size;
+  button {
+    background: none;
+    border: none;
+  }
+}
+
+.collection-tool-image {
+  border-right: 1px solid #ddd;
+  padding: 18px;
+  display: flex;
+  flex: none;
+  align-self: stretch;
+  width: 7rem;
+}
+
+.collection-tool-sort {
+  border-left: 1px solid #ddd;
+  padding: 18px;
+  display: flex;
+  flex: none;
+  align-self: stretch;
+  width: 9rem;
+  justify-content: center;
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
+
+.container-marketing {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  .row {
+    display: flex;
+    width: 80%;
+    margin: 0;
+    .col-lg-4 {
+      justify-content: center;
+    }
+  }
+  .category-bar {
+    width: 20%;
+    .category-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      button {
+        border: none;
+        background: none;
+      }
+    }
+  }
 }
