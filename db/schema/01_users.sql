@@ -1,47 +1,43 @@
 -- Drop and recreate Users table (Example)
 
 DROP TABLE IF EXISTS users CASCADE;
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL
-);
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
- name username VARCHAR (255) NOT NULL,
- name emails VARCHAR (255) NOT NULL,
- name phone_numbers VARCHAR (255) NOT NULL,
- name pass VARCHAR (255) NOT NULL,
- name is_admin BOOLEAN
+  username VARCHAR (255) NOT NULL,
+  emails VARCHAR (255) NOT NULL,
+  phone_numbers VARCHAR (255) NOT NULL,
+  pass VARCHAR (255) NOT NULL,
+  is_admin BOOLEAN
 );
 
-CREATE TABLE items (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name category_id ,
-  name user_id ,
+-- CREATE TABLE items (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--    category_id ,
+--    user_id ,
 
-  name price VARCHAR (255) NOT NULL,
-  name name VARCHAR (255) NOT NULL,
-  name image VARCHAR (255) NOT NULL,
-  name create_date (timestamped?) NOT NULL,
-  name description VARCHAR(255) NOT NULL,
-  name stock VARCHAR(255) NOT NULL,
-  name is_sold BOOLEAN
-  name is_featured BOOLEAN
-);
+--    price VARCHAR (255) NOT NULL,
+--     VARCHAR (255) NOT NULL,
+--    image VARCHAR (255) NOT NULL,
+--    create_date (timestamped?) NOT NULL,
+--    description VARCHAR(255) NOT NULL,
+--    stock VARCHAR(255) NOT NULL,
+--    is_sold BOOLEAN
+--    is_featured BOOLEAN
+-- );
 
-CREATE TABLE categories (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name names VARCHAR (255) NOT NULL,
+-- CREATE TABLE categories (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--    names VARCHAR (255) NOT NULL,
 
-);
+-- );
 
-CREATE TABLE messages (
-  id SERIAL PRIMARY KEY NOT NULL,
-  name conversation_id
-  name user_id
-  name content(body) VARCHAR(255) NOT NULL,
+-- CREATE TABLE messages (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--    conversation_id
+--    user_id
+--    content(body) VARCHAR(255) NOT NULL,
 
-)
+-- )
 
 
