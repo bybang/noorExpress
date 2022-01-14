@@ -8,6 +8,11 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
+var cookieSession = require('cookie-session')
+const http = require('http');
+const server = http.createServer(app);
+const { Server } = require("socket.io");
+const io = new Server(server);
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -19,6 +24,14 @@ const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
 db.connect();
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ["password"],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -82,20 +95,49 @@ app.get('/fetchFavourites/:userId', fetchFavourites(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const userId = req.session.user_id;
+  const templateVars = {};
+  db.query(`SELECT * FROM users WHERE id = $1;`, [userId])
+  .then(data => {
+    templateVars.user = data.rows[0];
+    res.render("index", templateVars);
+  })
 });
 
 app.get('/login/:id', (req, res) => {
   // cookie-session middleware
   req.session.user_id = req.params.id;
 
-  // cookie-parser middleware
-  res.cookie('user_id', req.params.id);
-
   // send the user somewhere
   res.redirect('/');
 });
 
-app.listen(PORT, () => {
+io.on('connection', (socket) => {
+  console.log('a user connected');
+});
+
+app.get("/chat", (req, res) => {
+  const userId = req.session.user_id;
+  const templateVars = {};
+  db.query(`SELECT * FROM users WHERE id = $1;`, [userId])
+  .then(async data => {
+    const convoResult = await db.query(`SELECT * FROM items JOIN conversations ON items.id = conversations.item_id JOIN messages ON conversations.id = messages.conversation_id WHERE items.user_id = $1`, [userId])
+    const convos = convoResult.rows.reduce((acc, msg) => {
+      if (!acc[msg.conversation_id]) {
+        acc[msg.conversation_id] = [];
+      }
+      acc[msg.conversation_id].push(msg);
+      return acc
+    }, {});
+    console.log(convos)
+    templateVars.user = data.rows[0];
+    templateVars.convos = convos
+    res.render("chat", templateVars);
+  })
+});
+
+app.get("/")
+
+server.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
