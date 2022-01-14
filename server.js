@@ -136,7 +136,22 @@ app.get("/chat", (req, res) => {
   })
 });
 
-app.get("/")
+app.get("/messages", (req, res) => {
+  const userId = req.session.user_id;
+  db.query(`SELECT * FROM users WHERE id = $1;`, [userId])
+  .then(async data => {
+    const convoResult = await db.query(`SELECT * FROM items JOIN conversations ON items.id = conversations.item_id JOIN messages ON conversations.id = messages.conversation_id WHERE items.user_id = $1`, [userId])
+    const convos = convoResult.rows.reduce((acc, msg) => {
+      if (!acc[msg.conversation_id]) {
+        acc[msg.conversation_id] = [];
+      }
+      acc[msg.conversation_id].push(msg);
+      return acc
+    }, {});
+
+    res.json(convos);
+  })
+});
 
 server.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
