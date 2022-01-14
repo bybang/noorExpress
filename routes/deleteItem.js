@@ -8,7 +8,7 @@ const deleteItem = (db) => {
       };
       const res1 = await db.query(userQuery);
 
-      if (!res1.rows[0]?.is_admin) {
+      if (!res1.rows[0].is_admin) {
         res
           .status(401)
           .send({ message: "User don't have access to delete the item" });
@@ -16,7 +16,7 @@ const deleteItem = (db) => {
       }
       const deleteFavQuery = {
         text: `DELETE FROM public.favourites WHERE id=$1`,
-        values: [itemId],  
+        values: [itemId],
       }
 
       await db.query(deleteFavQuery);
