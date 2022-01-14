@@ -58,5 +58,23 @@
   width: 250px;
   border-radius: 50%;
   display: flex;
+  object-fit: contain;
 
+}
+
+.product {
+  height: 30em;
+
+
+}
+
+.product p {
+
+  color: blue;
+}
+
+.product a {
+
+  color: black;
+  justify-content: space-around;
 }
