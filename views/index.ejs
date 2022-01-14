@@ -176,9 +176,9 @@
             Sort <i class="fas fa-chevron-down"></i>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="sortDropdownMenu">
-            <a class="dropdown-item-low" href="#">Sort By Lowest Price</a>
-            <a class="dropdown-item-high" href="#">Sort By Highest Price</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <button class="dropdown-item low" href="#">Sort By Lowest Price</button>
+            <button class="dropdown-item high" href="#">Sort By Highest Price</button>
+            <button class="dropdown-item" href="#">Something else here</button>
           </div>
         </div>
       </div>
@@ -234,8 +234,10 @@
           <h5>Iphone 13 Pro Max (Gold)</h5>
           <p>$1,549.00</p>
          <i class="btn btn-clear far fa-heart fa-2x"></i>
+         <% if (user && user.is_admin) { %>
           <p><a class="btn btn-primary mr-3" href="#">Delete Item</a>
            <a class="btn btn-secondary" href="#">Mark as Sold</a></p>
+           <% } %>
         </div><!-- /.col-lg-4 product -->
 
         <div class="col-lg-4 product">

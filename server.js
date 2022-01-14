@@ -69,7 +69,7 @@ const removeFromFavourites = require("./routes/removeFromFavourite");
 const fetchFavourites = require("./routes/fetchFavourites");
 const featuredItems = require("./routes/featuredItems");
 
-
+const messages = require("./routes/messages");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -89,6 +89,8 @@ app.post('/addToFavourites', addToFavourites(db));
 app.delete('/removeFromFavourites', removeFromFavourites(db));
 app.get('/fetchFavourites/:userId', fetchFavourites(db));
 
+// app.get("/messages", getMessages(db));
+// app.post("/messages", createMessage(db));
 // Note: mount other resources here, using the same pattern above
 // Home page
 // Warning: avoid creating more routes in this file!
