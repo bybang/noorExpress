@@ -4,10 +4,10 @@ $(document).ready(function() {
   $('.navbar-toggler').click(() => $('.collapse').toggleClass('show'));
   $('#dropdownMenuButton').click(() => $('#sortDropdownMenu').toggleClass('show'));
 
-  // Sort By Price
-  $('.dropdown-item-low')$.post('/filterByPrice/:highToLow')
-  $('.dropdown-item-low')$.post('/filterByPrice/:highToLow')
+  // // Sort By Price
+  // $('.dropdown-item-low')$.post('/filterByPrice/:highToLow')
+  // $('.dropdown-item-low')$.post('/filterByPrice/:highToLow')
 
-  //Adding categories
-  $(.'category-inner').
+  // //Adding categories
+  // $('.category-inner').
 });
