@@ -1,5 +1,6 @@
 .carousel-item {
-  img, video {
+  img,
+  video {
     position: relative;
     height: 520px;
     width: 100%;
@@ -15,7 +16,11 @@
   height: 100%;
   left: 0;
   top: 0;
-  background: linear-gradient(to top,rgba(4,4,4,.65),rgba(54,54,54,.2));
+  background: linear-gradient(
+    to top,
+    rgba(4, 4, 4, 0.65),
+    rgba(54, 54, 54, 0.2)
+  );
   z-index: 1;
 }
 
@@ -25,14 +30,14 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 
 .container {
   width: 100%;
-  padding-right: var(--bs-gutter-x,.75rem);
-  padding-left: var(--bs-gutter-x,.75rem);
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
 }
@@ -45,36 +50,30 @@
   text-align: center;
 }
 
-.carousel-caption {
-  z-index: 2;
-}
-
 .img {
   height: 250px;
   width: 250px;
   border-radius: 50%;
   display: flex;
   object-fit: contain;
-
 }
 
 .product {
   height: 30em;
-
-
 }
 
 .product p {
-
   color: blue;
 }
 
 .product a {
-
   color: black;
 }
 
 .far fa-heart {
-
   color: black;
+}
+
+.carousel-caption {
+  z-index: 2;
 }
